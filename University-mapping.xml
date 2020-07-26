@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+	 <class name="com.first.com.hibernate.University" table="university">
+		<id name="id" column="eid" type="string">
+		</id>
+		<property name="name" column="ename" type="string">
+		</property>
+		<map name="providedMajor" table="providedMajor">
+			<key column="universityID"></key>
+			<index column="majorID" type="string"></index>
+			<element column="majorName" type="string"></element>
+		</map>
+	 </class>
+ </hibernate-mapping>
